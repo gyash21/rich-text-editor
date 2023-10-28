@@ -28,9 +28,30 @@ export default function Home(){
       title: '',
       price: 29.9,
       description: "",
-    }
-  });
-  return <main className=""></main>
+    },
+  })
 
 
+  return (
+  <main className="p-24">
+
+<Form{...form}>
+<form>
+  <FormField
+    control={form.control}
+    name="title"
+    render={({field})  => (
+      <FormItem>
+        <FormLabel>Title</FormLabel>
+        <FormControl>
+          <Input placeholder= "Main title of your page" {...field}/>
+        </FormControl>
+        <FormMessage/>
+      </FormItem>
+    )}
+    />
+</form>
+</Form>
+</main>
+)
 }
