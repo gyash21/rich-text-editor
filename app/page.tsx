@@ -55,6 +55,26 @@ export default function Home(){
       </FormItem>
     )}
     />
+
+
+<FormField
+    control={form.control}
+    name="description"
+    render={({field})  => (
+      <FormItem>
+        <FormLabel>Description</FormLabel>
+        <FormControl>
+          <Tiptap description={field.name} onChange={field.onChange}/>
+        </FormControl>
+        <FormMessage/>
+      </FormItem>
+    )}
+    />
+
+
+    <Button className='my-4' type='submit'>
+      Submit
+    </Button>
 </form>
 </Form>
 </main>
