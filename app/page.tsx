@@ -1,6 +1,9 @@
+"use client"
+
 import {Form,FormControl,FormField,FormItem,FormLabel,FormMessage} from "@/components//ui/form"
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod";
 
 
@@ -24,6 +27,7 @@ export default function Home(){
 
 
   const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     mode: 'onChange',
     defaultValues:{
       title: '',
