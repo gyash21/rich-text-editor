@@ -26,4 +26,13 @@ export default function Tiptap ({
             console.log(editor.getHTML())
         },
     })
+
+
+    return(
+
+        <div className="flex flex-col justify-strech min-h-[250px]">
+            <Toolbar editor={ editor }/>
+            <EditorContent editor={ editor }/>
+        </div>
+    )
 }
