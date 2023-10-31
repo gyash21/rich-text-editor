@@ -15,6 +15,15 @@ export default function Tiptap ({
     const editor = useEditor({
         extensions: [StarterKit.configure()],
         content: description,
-        
+        editorProps:{
+            attributes:{
+                class: "rounded-md border md-h-[150px] border-input bg-background disabled:cursor-not-allowed disabled:opacity-50" 
+            },
+        },
+
+        onUpdate({ editor }){
+            onChange(editor.getHTML())
+            console.log(editor.getHTML())
+        },
     })
 }
